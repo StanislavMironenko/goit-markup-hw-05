@@ -24,7 +24,7 @@
         <a class="logo" href="#">Web<span class="logo-header">Studio</span></a>
         <nav class="nav">
           <ul class="nav-list list-oll">
-            <li class="item"><a class="nav-link" href="./index.html">Студия</a></li>
+            <li class="item"><a class="nav-link active" href="./index.html">Студия</a></li>
             <li class="item"><a class="nav-link" href="./portfolio.html">Портфолио</a></li>
             <li class="item"><a class="nav-link" href="#">Контакты</a></li>
           </ul>
@@ -54,7 +54,7 @@
       <section class="hero section">
         <div class="container">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <button type="button" class="btn">Заказать услугу</button>
+          <button type="button" class="btn" data-modal-open>Заказать услугу</button>
         </div>
       </section>
       <section class="section benefits">
@@ -112,12 +112,22 @@
         <div class="container">
           <h2 class="title">Чем мы занимаемся</h2>
           <ul class="list-oll work-list">
-            <li class="item"><img src="./images/box1.jpg" alt="Кодим" width="370" /></li>
+            <li class="item"><img src="./images/box1.jpg" alt="Кодим" width="370" />
+              <div class="work">
+              <p class="work-text">Десктопные приложения</p>
+              </div>
+            </li>
             <li class="item">
               <img src="./images/box2.jpg" alt="Пишем приложения на телефон" width="370" />
+              <div class="work">
+              <p class="work-text">Мобильные приложения</p>
+              </div>
             </li>
             <li class="item">
               <img src="./images/box3.jpg" alt="Создаем приложения" width="370" />
+              <div class="work">
+              <p class="work-text">Дизайнерские решения</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -252,42 +262,42 @@
           <li class="item">
             <a  class="customer-icon" href="">
               <svg class="icon">
-                  <use href="/goit-markup-hw-04/images/symbol-defs.svg#icon-Comp1"></use>
+                  <use href="./images/symbol-defs.svg#icon-Comp1"></use>
               </svg>
             </a>
           </li>
           <li class="item">
             <a  class="customer-icon" href="">
               <svg class="icon">
-                  <use href="/goit-markup-hw-04/images/symbol-defs.svg#icon-Comp2"></use>
+                  <use href="./images/symbol-defs.svg#icon-Comp2"></use>
               </svg>
             </a>
           </li>
           <li class="item">
             <a  class="customer-icon" href="">
               <svg class="icon">
-                  <use href="/goit-markup-hw-04/images/symbol-defs.svg#icon-Comp3"></use>
+                  <use href="./images/symbol-defs.svg#icon-Comp3"></use>
               </svg>
             </a>
           </li>
           <li class="item">
             <a  class="customer-icon" href="">
               <svg class="icon">
-                  <use href="/goit-markup-hw-04/images/symbol-defs.svg#icon-comp4"></use>
+                  <use href="./images/symbol-defs.svg#icon-comp4"></use>
               </svg>
             </a>
           </li>
           <li class="item">
             <a  class="customer-icon" href="">
               <svg class="icon">
-                  <use href="/goit-markup-hw-04/images/symbol-defs.svg#icon-comp5"></use>
+                  <use href="./images/symbol-defs.svg#icon-comp5"></use>
               </svg>
             </a>
           </li>
           <li class="item">
             <a  class="customer-icon" href="">
               <svg class="icon">
-                  <use href="/goit-markup-hw-04/images/symbol-defs.svg#icon-comp6"></use>
+                  <use href="./images/symbol-defs.svg#icon-comp6"></use>
               </svg>
             </a>
           </li>
@@ -335,6 +345,13 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="esc" data-modal-close> 
+          <img src="/goit-markup-hw-05/images/close.svg" width="18" height="18">
+        </button>
+      </div>
+    </div>
     <script src="./js/modal.js"></script>
   </body>
 </html>

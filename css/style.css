@@ -84,17 +84,22 @@ body{
     font-weight: 500;
     line-height: 1.14;
     color: var(--header-color-);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 .nav-list .item:not(:last-child){
     margin-right: 50px;
 }
+
 .nav-link:hover, 
 .nav-link:focus,
 .link:hover,
 .link:focus{
     color: var(--secondary-color-);
     fill: var(--secondary-color-);
+}
+.nav-link:active{
+    color: var(--secondary-color-);
 }
 .link{
     display: flex;
@@ -104,6 +109,7 @@ body{
     line-height: 1.14;
     color: var(--main-color-);
     fill: var(--main-color-);
+    transition:color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-list{
@@ -117,12 +123,30 @@ body{
     width: 16px;
     height: 12px;
     margin-right: 10px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .item-tel{
     width: 10px;
     height: 16px;
     margin-right: 10px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
    
+}
+
+
+.active{
+    color: var(--secondary-color-);
+    position: relative;
+}
+.active::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--secondary-color-);
 }
 /* Social */
 
@@ -136,9 +160,11 @@ body{
     border: 1px solid transparent;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-item{
     display: flex;
+  
 }
 /* Main */
 .section{
@@ -225,11 +251,39 @@ body{
     font-size: 14px;
     line-height: 1.71;
   }
+
+  /* Work */
   .work-list{
       display: flex;
+     
   }
 .work-list .item:not(:last-child){
     margin-right: 30px;
+}
+.work-list .item{
+    position: relative;
+}
+.work{
+position: absolute;
+left: 0;
+bottom: 0px;
+height: 70px;
+width: 370px;
+text-align: center;
+background-color: rgba(47, 48, 58, 0.8);
+
+
+}
+.work-text{
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.17;
+    text-transform: uppercase;
+    color: var(--white-color);
+    padding-top: 24px;
+    padding-bottom: 24px;
+   
 }
 .title{
     font-size: 36px;
@@ -266,8 +320,8 @@ body{
 .team-card{
     background-color: var(--main-bc-);
     text-align: center;
-    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   
 }
 .team-img{
     border: 0;
@@ -285,6 +339,8 @@ body{
 .team-card .social-icon{
     fill:#AFB1B8 ;
     margin-right: 0;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-item .item:not(:last-child){
     margin-right: 10px;
@@ -293,15 +349,14 @@ body{
     display: flex;
     justify-content: center;
     padding: 0 32px 30px 32px;
-   
+      
    }
 .team-card .social-icon:focus,
 .team-card .social-icon:hover{
     fill: #ffffff;
     background: var(--secondary-bc-);
     color: var(--white-color);
-    
-}
+    }
 /* Сustomer */
 .customer{
     display: flex;
@@ -316,7 +371,8 @@ body{
     border: 1px solid #AFB1B8;
     border-radius: 4px;
     fill: #AFB1B8;
-    /* margin-right: 30px; */
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
  .customer .item:not(:last-child){
     margin-right: 30px;
@@ -325,6 +381,7 @@ body{
 .customer-icon .icon{
     width: 106px;
     height: 60px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 .customer-icon:focus,
@@ -343,11 +400,14 @@ body{
     text-align: center;
     letter-spacing: 0.03em;
 
+    cursor: pointer;
     background-color: var(--button-bc-);
     color: var(--header-color-);
     border: transparent 0;
     border-radius: 4px ;
     padding: 6px 22px;
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 .btn{
     height: 50px;
@@ -360,7 +420,7 @@ body{
     background-color: var(--secondary-bc-);
     color: var(--white-color);
    
-   
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero .btn:hover,
 .hero .btn:focus{
@@ -405,6 +465,7 @@ color: var(--white-color);
 .footer-link{
     color: var(--white-color);
     opacity: 0.6;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-link:hover,
 .footer-link:focus{
@@ -458,6 +519,67 @@ color: var(--white-color);
     background: var(--secondary-bc-);
 }
 
+
+
+/* Modal */
+
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    transition: opacity 250ms  cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden{
+    opacity: 0;
+    /* visibility: hidden; */
+    pointer-events: none;
+}
+
+.backdrop.is-hiden .modal{
+    transform: translate(-50%, -50%) scale(0.8);
+}
+.modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%) scale(1) ;
+
+    height: 581px;
+    width: 525px;
+
+    background-color: var(--main-bc-);
+    border-radius: 4px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+    
+
+.esc{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    border: 1px rgb(15, 14, 14);
+    background-color: var(--main-bc-);
+    
+   
+}
+.esc:hover{
+    background-color: var(--secondary-color-);
+}
 /* Portfolio */
 
 
@@ -483,6 +605,8 @@ color: var(--white-color);
     margin-right: 30px;
     margin-bottom: 30px;
     display: block;
+    text-align: 0;
+    font-size: 0;
    
  
 }
@@ -518,13 +642,12 @@ border-left:  1px solid #EEEEEE ;
     position: relative;
     overflow: hidden;
 }
-.project .item:hover .backdrop,
-.project .item:focus .backdrop{
+.project .item:hover .back,
+.project .item:focus .back{
     transform: translateY(0);
 }
 
-
-.backdrop{
+.back{
     top: 0;
     left: 0;
     width: 100%;
@@ -540,11 +663,11 @@ border-left:  1px solid #EEEEEE ;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.backdrop-text{
+.back-text{
    
     padding: 63px 24px;
     font-size: 18px;
     line-height: 1.55;
     color: var(--white-color);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
